@@ -574,7 +574,7 @@ Les mutations ne peuvent pas être asynchrones !!!
  */
 const mutations = {
   // Remplace le tableau des clients par le tableau newClients en paramètres
-  SET_CLIENTS(state, newClients) {
+  SET_CLIENTS (state, newClients) {
     state.clients = newClients
   }
 }
@@ -606,7 +606,7 @@ Sert à calculer, trier, filtrer ou formater les donneés
 const getters = {
   // Retourne le tableau des clients du magasin
   getClients: function (state) {
-    return state.clients
+    return [...state.clients].sort((a, b) => a.name.first.localeCompare(b.name.first, 'fr'))
 
     /* Tableau trié par nom et prénom
     return state.clients.sort(
