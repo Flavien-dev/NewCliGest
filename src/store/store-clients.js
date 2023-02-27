@@ -611,7 +611,7 @@ Fonctionne comme les propriétés calculées
 Sert à calculer, trier, filtrer ou formater les donneés
  */
 const getters = {
-  // Retourne le tableau des clients du magasin
+  // Retourne le tableau des clients du magasin trié sur le prénom du client
   getClients: function (state) {
     return [...state.clients].sort((a, b) => a.name.first.localeCompare(b.name.first, 'fr'))
 
