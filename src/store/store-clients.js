@@ -574,7 +574,7 @@ Les mutations ne peuvent pas être asynchrones !!!
  */
 const mutations = {
   // Remplace le tableau des clients par le tableau newClients en paramètres
-  setClients(state, newClients) {
+  SET_CLIENTS(state, newClients) {
     state.clients = newClients
   }
 }
@@ -589,7 +589,7 @@ const actions = {
     api.get('https://randomuser.me/api/?results=100&nat=CH')
       // En cas de succès met à jour le tableau des clients du magasin
       .then(function (response) {
-        commit('setClients', response.data.results)
+        commit('SET_CLIENTS', response.data.results)
       })
       // En cas d'erreur, stoppe le script et affiche le message dans la console
       .catch(function (error) {
