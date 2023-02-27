@@ -573,7 +573,11 @@ Mutations : méthode qui manipulent les données
 Les mutations ne peuvent pas être asynchrones !!!
  */
 const mutations = {
-  // Remplace le tableau des clients par le tableau newClients en paramètres
+  /**
+   * Remplace le tableau des clients par le tableau newClients en paramètres
+   * @param state liste des clients actuels
+   * @param newClients nouvelle liste des clients
+   */
   SET_CLIENTS (state, newClients) {
     state.clients = newClients
   }
@@ -583,7 +587,10 @@ Actions : méthodes du magasin qui font appel aux mutations
 Elles peuvent être asynchrones !
  */
 const actions = {
-  // Récupère le tableau des clients en appelant l'API et met à jour le magasin
+  /**
+   * Récupère le tableau des clients en appelant l'API et met à jour le magasin
+   * @param commit validation
+   */
   getClientsApi ({ commit }) {
     // GET
     api.get('https://randomuser.me/api/?results=100&nat=CH')
